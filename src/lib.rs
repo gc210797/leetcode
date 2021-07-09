@@ -1,3 +1,5 @@
+mod atoi;
+mod insertion_sort_list;
 mod reverse_linked_list;
 mod sort_linked_list;
 mod zig_zag_conversion;

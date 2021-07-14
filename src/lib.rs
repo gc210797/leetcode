@@ -1,6 +1,7 @@
 mod atoi;
 mod insertion_sort_list;
 mod palindrome_number;
+mod reg_exp_matching;
 mod reverse_linked_list;
 mod sort_linked_list;
 mod zig_zag_conversion;

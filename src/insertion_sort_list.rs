@@ -10,7 +10,7 @@ impl Solution {
             return head;
         }
 
-        let mut dummy = Box::new(ListNode::new(-1));
+        let mut dummy = ListNode::new(-1);
         let mut prev = &mut dummy;
 
         while let Some(mut node) = head {
@@ -29,6 +29,22 @@ impl Solution {
 
             head = tmp;
         }
+
+        dummy.next
+    }
+
+    fn sorted_insert(head: Option<Box<ListNode>>, v: i32) -> Option<Box<ListNode>> {
+        let mut dummy = ListNode::new(-1);
+        dummy.next = head;
+        let mut prev = &mut dummy;
+
+        while prev.next.is_some() && prev.next.as_ref().unwrap().val < v {
+            prev = prev.next.as_mut().unwrap();
+        }
+
+        let mut new_node = Box::new(ListNode::new(v));
+        new_node.next = prev.next.take();
+        prev.next = Some(new_node);
 
         dummy.next
     }
@@ -51,4 +67,20 @@ fn test() {
     }));
 
     println!("{:?}", Solution::insertion_sort_list(node5));
+}
+
+#[test]
+fn test1() {
+    let node1 = None;
+    let node2 = Solution::sorted_insert(node1, 5);
+
+    println!("{:?}", node2);
+
+    let node3 = Solution::sorted_insert(node2, 3);
+
+    println!("{:?}", node3);
+
+    let node4 = Solution::sorted_insert(node3, 4);
+
+    println!("{:?}", node4);
 }

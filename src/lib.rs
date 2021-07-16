@@ -6,6 +6,7 @@ mod reg_exp_matching;
 mod reverse_linked_list;
 mod sort_linked_list;
 mod trapping_rainwater;
+mod trapping_rainwater_2d;
 mod wildcard_matching;
 mod zig_zag_conversion;
 

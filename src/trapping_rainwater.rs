@@ -1,5 +1,6 @@
 //https://leetcode.com/problems/trapping-rain-water/
 
+struct Solution;
 
 impl Solution {
     pub fn trap(height: Vec<i32>) -> i32 {
@@ -7,12 +8,12 @@ impl Solution {
             return 0;
         }
         let mut result = 0;
-        
+
         let mut low = 0;
         let mut high = height.len() - 1;
         let mut right_max = 0;
         let mut left_max = 0;
-        
+
         while low < high {
             if height[low] < height[high] {
                 if height[low] > left_max {

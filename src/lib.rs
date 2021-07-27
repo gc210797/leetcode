@@ -9,6 +9,7 @@ mod rev_subarr_max_val;
 mod reverse_linked_list;
 mod roman_to_int;
 mod sort_linked_list;
+mod stone_game_vi;
 mod trapping_rainwater;
 mod trapping_rainwater_2d;
 mod wildcard_matching;
